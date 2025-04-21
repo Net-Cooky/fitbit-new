@@ -1,3 +1,33 @@
+const searchOpen = document.querySelector('.search-open');
+const searchBar = document.querySelector('.searchbar');
+const searchClose = document.querySelector('.search-close');
+const navBar = document.querySelector('.navbar');
+
+searchOpen.addEventListener('click', () => {
+    searchBar.style.display = 'block';
+    if (window.innerWidth >= 1024) {
+        navBar.style.display = 'none';
+    }
+    searchOpen.style.display = 'none';
+});
+
+searchClose.addEventListener('click', () => {
+    searchBar.style.display = 'none';
+    if (window.innerWidth >= 1024) {
+        navBar.style.display = 'block';
+    }
+    searchOpen.style.display = 'flex';
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth < 1024) {
+        navBar.style.display = 'none';
+    } else {
+        navBar.style.display = 'block';
+    }
+})
+
+// Hamburger menu
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const openMenu = document.querySelector('.open-menu');
 const closeMenu = document.querySelector('.close-menu');
